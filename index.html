@@ -206,7 +206,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 const TG=window.Telegram&&Telegram.WebApp;if(TG){TG.ready();TG.expand();try{TG.setHeaderColor("#13141b");TG.setBackgroundColor("#0c0d12")}catch(e){}}
 const P=new URLSearchParams(location.search);let API=P.get("api")||"";try{if(API)localStorage.setItem("ao_api",API);else API=localStorage.getItem("ao_api")||""}catch(e){}
 const INIT=TG?TG.initData:"";
-const COL={"bull":{"c":"#2fd27a","h":"#3b2a1a"},"bear":{"c":"#e0443c","h":"#1a1a1a"},"senti":{"c":"#5fb0ff","h":"#5a2d12"},"signal":{"c":"#2fb36d","h":"#2a1d14"},"mentor":{"c":"#4f8cff","h":"#5a2d12"},"boss":{"c":"#e0443c","h":"#1a1a1a"},"news":{"c":"#f2b632","h":"#2a1d14"},"stock":{"c":"#9b6bff","h":"#3b2a1a"},"acc":{"c":"#ff7a45","h":"#1a1a1a"},"law":{"c":"#5b6475","h":"#2a1d14"},"video":{"c":"#ff5fa2","h":"#4a2412"},"edit":{"c":"#1fb5c7","h":"#1a1a1a"},"content":{"c":"#ff9f1c","h":"#4a2412"},"picker":{"c":"#e8ba5c","h":"#1a1a1a"},"volume":{"c":"#5fd4ff","h":"#4a2412"},"liq":{"c":"#ff8fab","h":"#2a1d14"},"whale":{"c":"#b48cff","h":"#3b2a1a"},"swap":{"c":"#7ee081","h":"#1a1a1a"},"risk":{"c":"#ff5a3c","h":"#2a1d14"},"sizer":{"c":"#ffd166","h":"#5a2d12"},"stop":{"c":"#9aa5b1","h":"#1a1a1a"},"tp":{"c":"#2fd2b6","h":"#4a2412"},"exec":{"c":"#c0c8ff","h":"#2a1d14"},"check":{"c":"#8a5a2b","h":"#2a1d14"}};
+const COL={"macro":{"c":"#3fa0ff","h":"#2a1d14"},"crypto":{"c":"#f7931a","h":"#1a1a1a"},"quant":{"c":"#9aa5ff","h":"#5a2d12"},"journal":{"c":"#ffd166","h":"#3b2a1a"},"prop":{"c":"#e8ba5c","h":"#4a2412"},"psych":{"c":"#c06bff","h":"#7a4a1a"},"support":{"c":"#4bd18f","h":"#2a1d14"},"sales":{"c":"#ff6b6b","h":"#1a1a1a"},"designer":{"c":"#ff9fd0","h":"#5a2d12"},"bull":{"c":"#2fd27a","h":"#3b2a1a"},"bear":{"c":"#e0443c","h":"#1a1a1a"},"senti":{"c":"#5fb0ff","h":"#5a2d12"},"signal":{"c":"#2fb36d","h":"#2a1d14"},"mentor":{"c":"#4f8cff","h":"#5a2d12"},"boss":{"c":"#e0443c","h":"#1a1a1a"},"news":{"c":"#f2b632","h":"#2a1d14"},"stock":{"c":"#9b6bff","h":"#3b2a1a"},"acc":{"c":"#ff7a45","h":"#1a1a1a"},"law":{"c":"#5b6475","h":"#2a1d14"},"video":{"c":"#ff5fa2","h":"#4a2412"},"edit":{"c":"#1fb5c7","h":"#1a1a1a"},"content":{"c":"#ff9f1c","h":"#4a2412"},"picker":{"c":"#e8ba5c","h":"#1a1a1a"},"volume":{"c":"#5fd4ff","h":"#4a2412"},"liq":{"c":"#ff8fab","h":"#2a1d14"},"whale":{"c":"#b48cff","h":"#3b2a1a"},"swap":{"c":"#7ee081","h":"#1a1a1a"},"risk":{"c":"#ff5a3c","h":"#2a1d14"},"sizer":{"c":"#ffd166","h":"#5a2d12"},"stop":{"c":"#9aa5b1","h":"#1a1a1a"},"tp":{"c":"#2fd2b6","h":"#4a2412"},"exec":{"c":"#c0c8ff","h":"#2a1d14"},"check":{"c":"#8a5a2b","h":"#2a1d14"}};
 let TEAM=[];
 const by=()=>Object.fromEntries(TEAM.map(a=>[a.id,a]));
 const kind=k=>TEAM.find(a=>a.k===k)||TEAM.find(a=>a.k==="boss");
@@ -333,8 +333,8 @@ function buildLayout(g){SC.seats=[];SC.screens=[];SC.leds=[];
  /* Kontent */wallScreen(g,370,692,130,50,"yt",23);g.beginPath();g.arc(560,714,20,0,7);g.fillStyle="#f4efe6";g.fill();g.strokeStyle="#c8902e";g.lineWidth=3;g.stroke();F(g,559,700,2,15,"#222");F(g,559,713,10,2,"#222");
  F(g,364,800,26,18,"#121318");F(g,388,804,10,10,"#3a3d48");F(g,370,818,3,70,"#2a2c33");g.strokeStyle="#2a2c33";g.lineWidth=3;g.beginPath();g.moveTo(371,880);g.lineTo(352,920);g.moveTo(371,880);g.lineTo(390,920);g.stroke();
  glow(g,"#fff3d0",16,()=>{g.beginPath();g.arc(340,760,14,0,7);g.strokeStyle="#fff3d0";g.lineWidth=4;g.stroke()});F(g,339,774,2,90,"#2a2c33");
- desk(g,455,775,140,2,[495,560],"kont");plant(g,590,926,.7);
- /* Qollaw */wallScreen(g,1130,695,140,50,"headset",29);plant(g,1050,760,.85);plant(g,1338,760,.85);sconce(g,1095,712);desk(g,1140,780,205,4,[1195,1295],"help",[0,1]);
+ desk(g,445,775,152,3,[470,525,580],"kont");plant(g,590,926,.7);
+ /* Qollaw */wallScreen(g,1130,695,140,50,"headset",29);plant(g,1050,760,.85);plant(g,1338,760,.85);sconce(g,1095,712);desk(g,1140,780,205,4,[1170,1250,1320],"help");
  /* IT */wallScreen(g,1460,695,130,50,"cloud",31);server(g,1378,700,50,180);server(g,1610,700,48,180);desk(g,1475,790,120,2,[1535],"it");
  g.save();g.globalCompositeOperation="lighter";const pool=(x,y,r,a)=>{const rg=g.createRadialGradient(x,y,0,x,y,r);rg.addColorStop(0,`rgba(255,170,70,${a})`);rg.addColorStop(1,"rgba(255,170,70,0)");g.fillStyle=rg;g.fillRect(x-r,y-r,r*2,r*2)};
  for(const k of ["anal","sabaq","lab","sig","risk","trade","news","kont","help","it"]){const q=R[k];for(let i=1;i<=2;i++)pool(q.x+q.w*i/3,q.y+q.wh+30,q.w/2.4,.07)}
@@ -386,7 +386,7 @@ const R={
  lab:{n:"AI treyding laboratoriyası",x:1005,y:12,w:375,h:272,wh:104,aisle:255,door:[1190,290],d:"Signal analizi, kólem hám likvidlik modelleri"},
  sig:{n:"Signal hám monitoring",x:1395,y:12,w:268,h:272,wh:104,aisle:255,door:[1520,290],d:"Iri oyınshılar, DXY, korrelyaciya baqlawı"},
  risk:{n:"Risk hám kapital basqarıw",x:12,y:305,w:372,h:310,wh:105,aisle:568,door:[470,568],d:"Risk qaqpası, lot esabı, buxgalteriya"},
- trade:{n:"Treyderler zalı",x:1175,y:300,w:488,h:335,wh:95,aisle:605,door:[1120,605],d:"Order kartası, stop baqlaw, TP basqarıw, MT5 demo"},
+ trade:{n:"Treyderler zalı",x:1175,y:300,w:488,h:335,wh:95,aisle:605,gap:1188,gapY:540,door:[1120,605],d:"Order kartası, stop baqlaw, TP basqarıw, MT5 demo"},
  news:{n:"Jańalıq hám ekonomika",x:12,y:645,w:292,h:285,wh:100,aisle:895,door:[150,638],d:"Ekonomikalıq kalendar, bazar jańalıqları"},
  kont:{n:"Járnamalastırıw hám kontent",x:318,y:645,w:287,h:285,wh:100,aisle:895,door:[430,638],d:"SMM, Telegram, Instagram, blog, montaj"},
  help:{n:"Qollaw hám community",x:1035,y:650,w:320,h:280,wh:100,aisle:900,door:[1090,638],d:"Yurist, klub aǵzaları menen baylanıs"},
@@ -406,9 +406,9 @@ const legOut=(r,s)=>{const q=R[r];return q.gap&&s[1]<q.gapY?[[q.gap,s[1]],[q.gap
 const legIn=(r,p)=>{const q=R[r];return q.gap&&p[1]<q.gapY?[[q.gap,q.aisle],[q.gap,p[1]],p]:[[p[0],q.aisle],p]};
 /* jumıs orınları (sahnadaǵı stullar menen birdey) */
 const st_=(x,y)=>({p:[x,y],seat:true}),sd_=(x,y)=>({p:[x,y],seat:false});
-const HSEATS={anal:[st_(180,198),st_(338,198),st_(57,218)],sabaq:[sd_(850,140),st_(930,218),st_(562,218),st_(674,218),st_(818,218)],
+const HSEATS={anal:[st_(180,198),st_(338,198),st_(57,218)],sabaq:[sd_(850,140),st_(930,218),st_(562,218),st_(674,218),st_(818,218),st_(874,218)],
  lab:[st_(1085,198),st_(1195,198),st_(1305,198)],sig:[st_(1470,198),st_(1590,198)],risk:[st_(90,498),st_(197,498),st_(305,498)],
- trade:[st_(1270,568),st_(1420,568),st_(1570,568)],news:[st_(205,843)],kont:[st_(495,843),st_(560,843)],help:[st_(1195,848),st_(1295,848)],it:[st_(1535,858)],lobby:[sd_(760,628)]};
+ trade:[st_(1270,568),st_(1420,568),st_(1570,568),st_(1270,478),st_(1420,478),st_(1570,478)],news:[st_(205,843)],kont:[st_(470,843),st_(525,843),st_(580,843)],help:[st_(1170,848),st_(1250,848),st_(1320,848)],it:[st_(1535,858)],lobby:[sd_(760,628)]};
 const STANDS={anal:[[60,258],[250,258],[400,258]],sabaq:[[500,262],[960,262]],lab:[[1050,255],[1350,255]],sig:[[1420,255],[1645,255]],risk:[[40,568],[340,568]],trade:[[1200,605],[1640,605]],
  news:[[60,895],[110,895]],kont:[[400,895],[590,895]],help:[[1070,900],[1330,900]],it:[[1450,905],[1600,905]],lobby:[[650,645],[990,645],[880,628]]};
 const ROOMOF={stock:"anal",picker:"anal",mentor:"sabaq",video:"sabaq",signal:"lab",volume:"lab",liq:"lab",whale:"sig",swap:"sig",risk:"risk",sizer:"risk",acc:"risk",
@@ -416,7 +416,7 @@ const ROOMOF={stock:"anal",picker:"anal",mentor:"sabaq",video:"sabaq",signal:"la
 const IDX={stock:0,picker:1,mentor:0,video:1,signal:0,volume:1,liq:2,whale:0,swap:1,risk:0,sizer:1,acc:2,exec:0,stop:1,tp:2,news:0,content:0,edit:1,law:0,check:0,boss:0};
 const TRADEK=["picker","volume","liq","whale","swap","risk","sizer","stop","tp","exec"];
 const CUSTOM_ROOMS=["help","sabaq","anal","lab","sig","kont","risk","news","it"];
-Object.assign(ROOMOF,{bull:"sabaq",bear:"sabaq",senti:"news"});Object.assign(IDX,{bull:2,bear:3,senti:1});HSEATS.news.push(st_(262,843));
+Object.assign(ROOMOF,{bull:"sabaq",bear:"sabaq",senti:"news",macro:"anal",crypto:"trade",quant:"trade",journal:"trade",prop:"sabaq",psych:"sabaq",support:"help",sales:"help",designer:"kont"});Object.assign(IDX,{bull:2,bear:3,senti:1,macro:2,crypto:3,quant:4,journal:5,prop:4,psych:5,support:1,sales:2,designer:2});HSEATS.news.push(st_(262,843));
 let HOME={};
 function assignHomes(){HOME={};const used={};let ci=0;const take=(r,i)=>{used[r]=used[r]||new Set();const L=HSEATS[r];if(i!=null&&i<L.length&&!used[r].has(i)){used[r].add(i);return L[i]}for(let j=0;j<L.length;j++)if(!used[r].has(j)){used[r].add(j);return L[j]}return null};
  for(const a of TEAM){let r=ROOMOF[a.k],h=r?take(r,IDX[a.k]):null;
